@@ -153,3 +153,17 @@ RETURN
   SELECT practica1.HistoryLog.Date, practica1.HistoryLog.Description
   FROM practica1.HistoryLog
 );
+
+USE BD2
+CREATE SEQUENCE practica1.auto_incremento
+	AS [int]
+	START WITH 1
+	INCREMENT BY 1
+	MINVALUE -10000
+	MAXVALUE 100000
+	CACHE
+
+	select * from practica1.course
+
+	INSERT INTO practica1.Course(CodCourse, Name, CreditsRequired)
+	VALUES( next value for practica1.auto_incremento,'Modela 2', 80)
